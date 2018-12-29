@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>web-presentation demo</title>
+  <link rel="stylesheet" href="css/styles.css" charset="utf-8">
+  <link rel="stylesheet" href="css/transitions.css" media="screen" charset="utf-8">
+  <link rel="import" href="web-presentation.html">
+  
+  <link rel='import' href='https://cdn.rawgit.com/ChristianKohler/PrismComponents/master/dist/prism-components.html'>
+</head>
+<body>
+  <web-presentation>
+    <web-presentation-progress></web-presentation-progress>
+    <web-presentation-keyboardcontrols></web-presentation-keyboardcontrols>
+
+    <web-slide-title class="clear-bg" data-transition="moveFromBottom">
+      <h1 style="font-size: 6em">Service Workers<br>
+        <small style="font-size: 0.5em">Pushing the Web forward</small></h1>
+      <p style="font-size: 2em; margin-top: 2em">André Gonçalves<br><small style="font-size: 18px">@andregoncalves</small></p>
+      <div class="stars"></div>
+      <div class="twinkling"></div>
+    </web-slide-title>
+
+
+    <web-slide class="blue-bg" data-transition="moveFromBottom">
+      <h1 style="font-size: 2em">André Gonçalves<br>
+        <small style="font-size: 0.5em">Senior Consultant</small></h1>
+        <div style="margin-top: 3em">
+        <img src="img/logo-3.jpeg" style="display: inline-block; margin: 5px; max-width: 50px">
+        <img src="img/logo-2.png" style="display: inline-block; margin: 5px; max-width: 50px">
+        <div style="display: inline-block; background: white; height: 50px; width: 50px; margin: 5px; position: relative; top: -40px">
+        <img src="img/logo-1.png" style="display: inline-block; max-width: 45px; position: relative; top: 15px">
+        </div>
+        </div>
+    </web-slide>
+
+    <web-slide class="purple-bg" data-transition="moveFromBottom">
+      <h1>The last time we met I said ...</h1>
+    </web-slide>
+
+    <web-slide class="clear-bg" data-transition="moveFromBottom">
+        <h1 style="margin-bottom: 1em">Learn and invest on the Web Platform Core, instead of <em>frameworks</em>:</h1>
+    
+        <h2><em style="color: red">CSS</em> instead of <em style="color: blue">SASS, LESS, etc</em></h2>
+        <h2><em style="color: red">ES6/7/8</em> instead of <em style="color: blue">Typescript, CoffeeScript, etc</em></h2>
+        <h2><em style="color: red">Web Components</em> instead of <em style="color: blue">React, Angular, Vue, etc</em></h2>
+  
+        <p style="margin-top: 2em">Platform features will outlive <em>libraries</em></p>
+        <p>And your are reducing the number of dependencies and the abstraction level</p>
+    </web-slide>
+
+    <web-slide class="clear-bg" data-transition="moveFromBottom">
+      <img src="img/j2.jpeg" style="max-width: 80%">
+    </web-slide>
+
+
+    <web-slide class="blue-bg" data-transition="moveFromBottom">
+        <h1 style="font-size: 3em; max-width: 80%">Service <span style="text-decoration: underline">Workers</span></h1>
+    </web-slide>
+
+    <web-slide class="clear-bg" data-transition="moveFromBottom">
+        <h1 style="font-size: 3em; max-width: 80%">Web Workers</h1>
+        <div style="max-width: 80%; margin: 4em auto">
+        <p>A browser API to run scripts in background threads. 
+          The worker thread can perform tasks without interfering with the UI thread.</p>
+        </div>
+      </web-slide>
+
+    <web-slide class="blue-bg" data-transition="moveFromBottom">
+        <h1 style="font-size: 3em; max-width: 80%">Threads ?</h1>
+        <div style="max-width: 80%; margin: 4em auto">
+        <p>JavaScript is a single threaded language, meaning it does one thing at a time. 
+          However sometimes we need to do more than one thing at a time...</p>
+        </div>
+      </web-slide>
+
+      <web-slide class="clear-bg" data-transition="moveFromBottom">
+        <h1 style="font-size: 3em; max-width: 80%">Event Loop</h1>
+        <div style="max-width: 80%; margin: 4em auto">
+          <img src="img/event1.png" style="max-width: 100%">
+        </div>
+      </web-slide>
+
+    <web-slide class="green-bg" data-transition="moveFromBottom">
+        <h1 style="font-size: 3em; max-width: 80%">Web Workers are useful for:</h1>
+        <div style="max-width: 80%; margin: 4em auto">
+        <p>Any kind of long running expensive process:</p>
+        <ul style="list-style: none; text-align: left">
+            <li>Processing large JSON datasets
+            <li>Reading/writing local storage databases
+            <li>Background updates
+            <li>Real time text formatting, spell checking, and syntax highlighting
+            <li>Filtering and processing images in a canvas
+            <li>Processing multimedia (audio and video)
+            <li>...
+        </ul>
+        </div>
+      </web-slide>
+
+      <web-slide class="clear-bg" data-transition="moveFromBottom">
+        <h1 style="font-size: 3em; max-width: 80%">API</h1>
+          <div style="margin-top: 1em">
+            <small>index.js</small>
+          </div>
+          <img src="img/worker1.png" style="margin: 5px auto">
+          <div style="margin-top: 1em">
+            <small>worker_file.js</small>
+          </div>
+          <img src="img/worker2.png" style="margin: 5px auto">
+      </web-slide>
+
+      <web-slide class="clear-bg" data-transition="moveFromBottom">
+        <h1 style="font-size: 3em; max-width: 80%">Comlink</h1>
+        <img src="img/comlink.png" style="margin: 15px auto; max-width: 80%">
+    </web-slide>
+
+      <web-slide class="blue-bg" data-transition="moveFromBottom">
+        <h1 style="font-size: 3em; max-width: 80%">Service Workers</h1>
+        <div style="max-width: 80%; margin: 4em auto">
+        <p>Are a special kind of Web Worker with Super Powers</p>
+        </div>
+      </web-slide>
+
+    <web-slide class="green-bg" data-transition="moveFromBottom">
+      <h1 style="font-size: 3em; max-width: 80%">What is a Service Worker?</h1>
+      <div style="max-width: 80%; margin: 4em auto">
+      <p>
+        It's a JS file that runs separately from the main browser thread, 
+        intercepting network requests, caching or retrieving resources from the cache, 
+        and delivering push messages.
+      </p>
+      <p style="margin-top: 2em">Think of it as a Javascript Programmable Network Proxy</p>
+      </div>
+    </web-slide>
+
+    <web-slide class="clear-bg" data-transition="moveFromBottom">
+        <h1 style="font-size: 3em; max-width: 80%">Service Worker</h1>
+        <div style="max-width: 80%; margin: 4em auto">
+        <img src="img/sw_diagram.jpg" style="width: 100%">
+        </div>
+      </web-slide>
+
+      <web-slide class="clear-bg" data-transition="moveFromBottom">
+          <h1 style="font-size: 3em; max-width: 80%">Service Worker</h1>
+          <div style="max-width: 80%; margin: 4em auto">
+          <img src="img/sw_diagram2.png" style="width: 100%">
+          </div>
+        </web-slide>
+
+      <web-slide class="clear-bg" data-transition="moveFromBottom">
+        <h1 style="font-size: 3em; max-width: 80%">Service Worker</h1>
+        <div style="max-width: 80%; margin: 4em auto">
+        <ul style="text-align: left">
+          <li style="margin-top: 0.5em"><strong>Offline First</strong>
+            <ul style="text-align: left">
+              <li>Programmable cache control</li>
+              <li>Custom built responses</li>
+            </ul>
+          </li>
+          <li style="margin-top: 1.5em"><strong>Background Processing</strong>
+              <ul style="text-align: left">
+                <li>Push Messages</li>
+                <li>Background sync</li>
+                <li>Task Scheduler</li>
+              </ul>
+            </li>
+          </li>
+        </ul>
+        </div>
+      </web-slide>
+
+
+      <web-slide class="purple-bg" data-transition="moveFromBottom">
+        <h1 style="font-size: 3em; max-width: 80%">Cache? We already have cache...</h1>
+        <div style="max-width: 80%; margin: 4em auto">
+        <p style="margin-bottom: 1em">The service worker cache API gives you more detailed and fine-grained control than the built-in browser cache does (with Cache-Control headers)</p>
+        <p style="margin-bottom: 1em">It can run before page is loaded and start the application</p>
+        <p style="margin-bottom: 1em">Cache logic is programmable in JS, allowing (for example) to cache assets not yet visited, and implement your own cache purge logic.</p>
+        </div>
+      </web-slide>
+
+      <web-slide class="clear-bg" data-transition="moveFromBottom">
+          <img src="img/j3.jpg" style="max-width: 80%">
+        </web-slide>
+    
+
+      <web-slide class="orange-bg" data-transition="moveFromBottom">
+          <h1 style="font-size: 3em; max-width: 80%">Background Execution!</h1>
+          <div style="max-width: 80%; margin: 4em auto">
+          <p style="margin-bottom: 1em">It runs regardless of if page/site is loaded in the browser</p>
+          <p style="margin-bottom: 1em"><strong>On Desktop:</strong> If the browser is completely closed then service workers can not run and will not dispatch any events (i.e. no push or background sync events)</p>
+          <p style="margin-bottom: 1em"><strong>On Mobile:</strong> The events will still be dispatched (i.e. background sync will trigger when the users device comes online and push will be received and cause a push event).</p>
+          </div>
+        </web-slide>
+  
+
+    <web-slide class="clear-bg" data-transition="moveFromBottom">
+      <h1 style="font-size: 3em; max-width: 80%">Awesome, how can I use it?</h1>
+      <div style="max-width: 80%; margin: 4em auto">
+        <p>Service worker (like Web Workers) live on a separate JS file.<br>We kick start the process by registering it:</p>
+        <img src="img/sw-1.png" style="max-width: 100%">
+        <small>*Scope* is important</small>
+      </div>
+    </web-slide>
+
+    <web-slide class="clear-bg" data-transition="moveFromBottom">
+        <h1 style="font-size: 3em; max-width: 80%">Install Event</h1>
+        <div style="max-width: 80%; margin: 4em auto">
+          <p>One typical approach is to immediatelly cache important assets</p>
+          <p>The <em>install</em> event is called on the SW (sw.js)</p>
+          
+          <img src="img/sw-3.png" style="max-width: 100%; margin-top: 1em">
+        </div>
+     </web-slide>
+
+     <web-slide class="clear-bg" data-transition="moveFromBottom">
+        <h1 style="font-size: 3em; max-width: 80%">Intercepting Network Requests</h1>
+        <div style="max-width: 80%; margin: 4em auto">
+          <p>The <em>fetch</em> event is called for *every* network request</p>
+          <img src="img/sw-4.png" style="max-width: 100%; margin-top: 1em">
+          <p></p>
+        </div>
+     </web-slide>
+
+     <web-slide class="clear-bg" data-transition="moveFromBottom">
+        <h1 style="font-size: 3em; max-width: 80%">Saving to the Cache</h1>
+        <div style="max-width: 80%; margin: 1em auto">
+          <img src="img/sw-5.png" style="max-width: 100%">
+          <p></p>
+        </div>
+     </web-slide>
+
+    <web-slide class="blue-bg" data-transition="moveFromBottom">
+        <h1 style="font-size: 3em; max-width: 80%">SW Debugging</h1>
+        <div style="max-width: 80%; margin: 4em auto">
+          <p>In Chrome DevTools Application Tab</p>
+          <img src="img/sw-2.png" style="max-width: 100%; margin-top: 1em">
+        </div>
+      </web-slide>
+
+      <web-slide class="purple-bg" data-transition="moveFromBottom">
+          <h1 style="font-size: 3em; max-width: 80%">Word of caution<br>Cache is tricky!</h1>
+          <div style="max-width: 80%; margin: 4em auto">
+            <p style="margin-bottom: 1em">Implementing a working, robust, cache system is difficult.</p>
+            <p style="margin-bottom: 1em">SW is a low level API and you can easily shoot yourself in the foot.</p>
+            <p style="margin-bottom: 1em">A good way to start is using Google's Workbox Javascript Library and then if needed move to your own custom implementation</p>
+            <img src="img/workbox.png" style="max-width: 50%; margin-top: 1em">
+          </div>
+       </web-slide>
+
+
+      <web-slide class="clear-bg" data-transition="moveFromBottom">
+          <h1 style="font-size: 3em; max-width: 80%">And there's a lot more for you to explore</h1>
+          <div style="max-width: 80%; margin: 4em auto">
+            <p style="margin-bottom: 2em"><strong>Push Notifications for the Web</strong> <br><small>(use it responsibly)</small></p>
+            <p style="margin-bottom: 2em"><strong>Background Sync</strong> <br><small>(defer actions until there is a stable network connectivity</small>)</p>
+            <p style="margin-bottom: 2em"><strong>Background Fetch</strong> <br><small>(download large data, like movie, audio files, etc)</small>)</p>
+          </div>
+       </web-slide>
+
+       <web-slide class="clear-bg" data-transition="moveFromBottom">
+          <h1 style="font-size: 3em; max-width: 80%">Can I use?</h1>
+          <img src="img/caniuse.png" style="max-width: 80%; margin-top: 2em">
+       </web-slide>
+
+    <!-- Questions -->
+    <web-slide class="purple-bg" data-transition="moveFromBottom">
+        <h1 style="font-size: 3em; max-width: 80%">Let's make the web great (<span style="color: #AAA; text-decoration: underline">and fast</span>) again!</h1>
+      <h1 style="font-size: 3em; max-width: 80%">Questions ?</h1>
+    </web-slide>
+
+  </web-presentation>
+</body>
+</html>

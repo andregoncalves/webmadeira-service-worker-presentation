@@ -1,0 +1,21 @@
+.DS_Store
+.AppleDouble
+.LSOverride
+.env
+
+# Ignore bundler config.
+/.bundle
+node_modules
+
+# Ignore all logfiles and tempfiles.
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+dist/*
+
+# Ignore Byebug command history file.
+.byebug_history
+
+# Cloud9 IDE
+.c9/
